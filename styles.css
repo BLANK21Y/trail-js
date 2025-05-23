@@ -418,6 +418,24 @@ footer {
   .contact-info {
     text-align: center;
   }
+  
+  .code-editor {
+    height: 300px; /* Fixed height for mobile */
+  }
+  
+  #editor {
+    height: 100% !important; /* Override any inline styles */
+    width: 100% !important;
+  }
+  
+  .monaco-editor {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .editor-section, .preview-section {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Fix for header on small devices */
@@ -439,5 +457,16 @@ footer {
   #BackBtn {
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
+  }
+  
+  .monaco-editor, 
+  .monaco-editor .overflow-guard, 
+  .monaco-editor .monaco-scrollable-element {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  #editor {
+    min-height: 250px;
   }
 }
