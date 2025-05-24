@@ -6,7 +6,7 @@
   <title>JS IN MY STYLE</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
-  <link rel="stylesheet" href="alert-styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app">
@@ -31,7 +31,7 @@
     </header>
 
     <!-- Overlay and Navigation Menu -->
-      <div class="overlay" id="overlay" onclick="toggleNav()"></div>
+    <div class="overlay" id="overlay" onclick="toggleNav()"></div>
     <div class="nav-menu" id="navMenu">
       <button class="close-button" onclick="toggleNav()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,8 +40,8 @@
         </svg>
       </button>
       <div class="nav-links">
-        <a href="HTML_INDEX.html">Home</a>
-        <a href="#">JavaScript Basics</a>
+        <a href="alert-script.js">Alert</a>
+        <a href="arguments-script.js">Arguments</a>
         <a href="#">DOM Manipulation</a>
         <a href="#">Events</a>
         <a href="#">Async JavaScript</a>
@@ -51,43 +51,8 @@
       </div>
     </div>
 
-    <!--info banner --> 
-<div class="bg-green-100 text-green-600 py-3 px-4 md:py-4 md:px-6 border-l-4 border-green-500 text-sm md:text-base"> 
-  <div class="flex items-start"> 
-    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path> 
-    </svg> 
-    <p> 
-      <span>The <code class="bg-green-50 px-2 py-1 rounded mx-1 inline-block">alert()</code> function in JavaScript displays a popup dialog box with a message and an OK button. It's often used for debugging or notifying the user.</span> 
-    </p> 
-  </div> 
-</div>
-
-
-    <main>
-      <div class="editor-grid">
-        <div class="editor-section">
-          <div class="tabs">
-            <button class="tab" data-tab="html">HTML</button>
-            <button class="tab" data-tab="css">CSS</button>
-            <button class="tab active" data-tab="js">JavaScript</button>
-          </div>
-          <div id="editor" class="code-editor"></div>
-        </div>
-
-        <div class="preview-section">
-          <div class="preview-header">
-            <span>Preview</span>
-            <div class="window-controls">
-              <div class="control red"></div>
-              <div class="control yellow"></div>
-              <div class="control green"></div>
-            </div>
-          </div>
-          <iframe id="preview" title="Preview"></iframe>
-        </div>
-      </div>
-    </main>
+    <!-- Info Banner and Editor Content goes here - will be injected by the script -->
+    <div id="main-content"></div>
 
     <footer>
       <div class="footer-content">
@@ -95,27 +60,27 @@
         <p class="subtitle">Learn all the JavaScript content in my style</p>
       </div>
       <div class="social-links">
-<a href="https://www.instagram.com/tech_in_my_style/?igsh=MWVpb2dzcmhwZ2NicQ%3D%3D#" target="_blank" class="social-link">
-  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
-</a>
-        
-<a href="https://t.me/Tech_in_my_style_bot" target="_blank" class="social-link">
-  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 2L11 13"></path>
-    <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
-  </svg>
-</a>
+        <a href="https://www.instagram.com/tech_in_my_style/?igsh=MWVpb2dzcmhwZ2NicQ%3D%3D#" target="_blank" class="social-link">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+              
+        <a href="https://t.me/Tech_in_my_style_bot" target="_blank" class="social-link">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2L11 13"></path>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+          </svg>
+        </a>
 
-<a href="https://youtube.com/@tech-in-my-style?si=G48ugz-d8oO7-4Dw" target="_blank" class="social-link">
-  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-  </svg>
-</a>
+        <a href="https://youtube.com/@tech-in-my-style?si=G48ugz-d8oO7-4Dw" target="_blank" class="social-link">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+          </svg>
+        </a>
       </div>
       <div class="contact-info">
         <p>Contact me: techstyle@gmail.com</p>
